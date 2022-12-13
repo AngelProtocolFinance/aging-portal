@@ -39,7 +39,7 @@ REACT_APP_NETWORK=TESTNET or MAINNET
 
 ## DEVELOPMENT NOTES
 
-- [] Create a _.env_ file with the above env vars
-- [] update page content `src/App`
-- [] update index.html metatags
-- [] update app config `src/constants/config`
+- [x] Create a _.env_ file with the above env vars
+- [x] update page content `src/App`
+- [x] update index.html metatags
+- [x] update app config `src/constants/config`
