@@ -18,10 +18,15 @@ export default function Hero() {
         Together we can crowdfund better aging for all
       </h1>
       <p className="text-white sm:text-lg font-heading w-[80%] text-center z-[1] mt-4">
-        Aging doesn't have to be awful. All of humanity can live longer,
-        healthier lives with science. Your donation avoids capital gains tax and
-        also generates an immediate tax receipt. Fight against the dying of the
-        light. Help fund longevity research today.
+        <p className="leading-relaxed">
+          Aging doesn't have to be awful.
+        </p>
+        <p className="leading-relaxed my-4">
+          All of humanity can live longer,
+          healthier lives with science. Your donation avoids capital gains tax and
+          also generates an immediate tax receipt. Fight against the dying of the
+          light. Help fund longevity research today.
+        </p>
       </p>
       <a
         className="z-[1] rounded-md btn-orange uppercase px-4 py-2 mb-16 mt-6 font-bold text-sm"

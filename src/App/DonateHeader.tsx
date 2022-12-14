@@ -7,16 +7,22 @@ export default function DonateHeader({ classes = "" }) {
         Together we can crowdfund better aging for all
       </h2>
       <p className="leading-relaxed max-w-7xl">
-        Every second, someone dies of an age-related disease. If your support
-        moves the timetable of curing these diseases up by even one second, you
-        will have saved someone's life. $10K in matching funds donated by the{" "}
-        <ExtLink
-          className="text-blue dark:text-blue-l2"
-          href="https://angelprotocol.io/csr-partners"
-        >
-          Angel Alliance
-        </ExtLink>{" "}
-        means your donation goes further.
+        <p className="leading-relaxed my-4">
+          Every second, someone dies of an age-related disease.
+        </p>
+        <p className="leading-relaxed my-4">
+          If your support shortens the timetable for curing these diseases by just one second, you could have saved someone's life.
+        </p>
+        <p className="leading-relaxed my-4">
+          PLUS your donation is doubled courtesy of $10K in matching funds donated by the{" "}
+          <ExtLink
+            className="text-blue dark:text-blue-l2"
+            href="https://angelprotocol.io/csr-partners"
+          >
+            Angel Alliance
+          </ExtLink>{" "}
+          means your donation goes further.
+        </p>
       </p>
     </section>
   );
