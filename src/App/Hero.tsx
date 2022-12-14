@@ -1,5 +1,5 @@
 import { app } from "constants/config";
-import video from "assets/videos/holdinghands.mp4";
+import video from "assets/videos/hourglass_sand_falling.mp4";
 
 export default function Hero() {
   return (
