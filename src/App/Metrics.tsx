@@ -1,13 +1,15 @@
 import { humanize } from "helpers/decimal";
 import { useMetricsQuery } from "services/apes";
 
-const DonationMetrics = () => {
+const Metrics = ({ classes = "" }) => {
   const {
     data = { numberOfDonations: "0", largestDonationUsd: "0", totalUsd: "0" },
   } = useMetricsQuery("");
 
   return (
-    <section className="font-heading container-padded grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-10 items-center p-8 lg:my-16">
+    <section
+      className={`font-heading container-padded grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-10 items-center p-8 ${classes}`}
+    >
       <Metric
         name="Total Donated"
         value={humanize(+data.totalUsd, 3) + " USDC"}
@@ -21,7 +23,7 @@ const DonationMetrics = () => {
   );
 };
 
-export default DonationMetrics;
+export default Metrics;
 
 function Metric(props: { name: string; value: string }) {
   return (
