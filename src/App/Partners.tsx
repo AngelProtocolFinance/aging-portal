@@ -8,27 +8,31 @@ const Partners = ({ classes = "" }) => {
           Longevity Nonprofits Partners
         </h3>
         <p className="leading-relaxed">
-          Scientists are working on exciting ways to live longer and healthier
-          lives by repairing the damage that aging does to our bodies. We are in
-          the{" "}
-          <ExtLink href="https://www.un.org/en/UN-system/ageing">
-            UN Decade of Aging
-          </ExtLink>{" "}
-          and have an opportunity to improve the quality and length of life for
-          billions worldwide. Aging is inherently inequitable, with burdens
+          In the last decade scientists have made significant breakthroughs in
+          understanding the root causes of age-related disease, and developing
+          credible approaches to begin addressing them.
+        </p>
+        <p className="leading-relaxed my-4">
+          Right now, we are in the UN Decade of Healthy Aging and have an
+          opportunity to improve the quality and length of life for billions
+          worldwide. Age-related decline is inherently inequitable, with burdens
           disproportionality born by women and minorities. Longevity is an
-          engineering problem, and we invite you to help us solve one of the
-          biggest problems of our age. Together, we can slay{" "}
+          engineering challenge, and we invite you to help us solve one of the
+          biggest problems of our age.
+        </p>
+        <p className="leading-relaxed">
+          Together, we can slay the{" "}
           <ExtLink href="https://www.youtube.com/watch?v=cZYNADOHhVY">
-            the dragon tyrant
-          </ExtLink>
+            Dragon Tyrant
+          </ExtLink>{" "}
+          of age-related disease.
         </p>
       </article>
       <ExtLink
         className="block mt-4 italic sm:text-lg"
         href="https://www.lifespan.io/news/vitalik-buterin-the-best-thing-to-donate-money-to-is-the-fight-against-aging"
       >
-        "The Best Thing to Donate Money to is the Fight Against Aging" - Vitalik
+        "The best thing to donate money to is the fight against aging" - Vitalik
       </ExtLink>
     </section>
   );
