@@ -1,9 +1,11 @@
+import ExtLink from "components/ExtLink";
+
 const About = ({ classes = "" }) => {
   return (
     <article className={`container-padded ${classes}`}>
       <div className="max-w-5xl">
         <h3 className="font-extrabold text-3xl sm:text-4xl mb-4 mt-6">
-          Who we are
+          Who We Are
         </h3>
         <p className="leading-relaxed">
           Angel Protocol enables charities to benefit from Web3 technology,
@@ -26,10 +28,17 @@ const About = ({ classes = "" }) => {
         </p>
         <p className="leading-relaxed my-4">
           Thanks to community efforts from contributors such as yourself, we
-          were able to raise $1.5M for climate change with our Restore Earth
-          campaign. Additionally, we were able to raise $500K for Typhoon Rai
-          disaster relief efforts in the Philippines and $200K for Ukraine. With
-          your support, we can raise even more for longevity research.
+          were able to raise $1.5M for climate change with our{" "}
+          <ExtLink href="https://restore-earth.angelprotocol.io">
+            Restore Earth campaign
+          </ExtLink>
+          . Additionally, we were able to raise $500K for{" "}
+          <ExtLink href="https://www.youtube.com/watch?v=h3wLfQLb8_4">
+            Typhoon Rai disaster relief efforts
+          </ExtLink>{" "}
+          in the Philippines and $200K for{" "}
+          <ExtLink href="https://ukraine.angelprotocol.io/">Ukraine</ExtLink>.
+          With your support, we can raise even more for longevity research.
         </p>
         <p className="leading-relaxed">
           By donating now, you become part of a global, community-owned charity
