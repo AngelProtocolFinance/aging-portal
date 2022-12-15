@@ -12,7 +12,7 @@ const Partners = ({ classes = "" }) => {
           understanding the root causes of age-related disease, and developing
           credible approaches to begin addressing them.
         </p>
-        <p>
+        <p className="leading-relaxed my-4">
           Right now, we are in the UN Decade of Healthy Aging and have an
           opportunity to improve the quality and length of life for billions
           worldwide. Age-related decline is inherently inequitable, with burdens
