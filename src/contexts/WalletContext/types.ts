@@ -4,7 +4,8 @@ export type ProviderId =
   | "xdefi-wallet" //xdefi terra provider
   | "xdefi-evm" //xdefi evm provider
   | "station"
-  | "walletconnect";
+  | "walletconnect"
+  | "keplr";
 
 type Connected = {
   status: "connected";

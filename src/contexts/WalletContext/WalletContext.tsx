@@ -6,6 +6,7 @@ import xdefiIcon from "assets/icons/wallets/xdefi.jpg";
 
 import useInjectedWallet from "./useInjectedWallet";
 import useTerra from "./useTerra";
+import useKeplr from "./useKeplr";
 
 export default function WalletContext(props: PropsWithChildren<{}>) {
   const metamask = useInjectedWallet({
@@ -33,8 +34,9 @@ export default function WalletContext(props: PropsWithChildren<{}>) {
       "https://chrome.google.com/webstore/detail/xdefi-wallet/hmeobnfnfcmdkdcmlblgagmfpfboieaf?hl=en",
   });
   const terraWallets = useTerra();
+  const keplr = useKeplr();
 
-  const wallets = [metamask, binance, xdefiEvm, ...terraWallets];
+  const wallets = [keplr, metamask, binance, xdefiEvm, ...terraWallets];
 
   const connectedWallet = wallets.find((w) => w.status === "connected") as
     | ConnectedWallet

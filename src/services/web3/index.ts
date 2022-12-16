@@ -1,8 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { ethers, utils } from "ethers";
-import { Coin, CoinData } from "types";
+import { Coin, CoinData, EVMContract, JsonRpcProvider } from "types";
 import ERC20Abi from "abi/ERC20.json";
-import { EVMContract, JsonRpcProvider } from "types/third-party/ethers";
 import { chains } from "constants/chains";
 import { queryContract } from "./queryContract";
 import { condenseToNum } from "helpers/decimal";
