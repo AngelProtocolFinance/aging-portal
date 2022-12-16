@@ -1,7 +1,4 @@
-import {
-  TransactionRequest,
-  TransactionResponse,
-} from "@ethersproject/abstract-provider";
+import { TransactionRequest, TransactionResponse } from "types";
 import { Coin, MsgExecuteContract, MsgSend } from "@terra-money/terra.js";
 import {
   ConnectedWallet as TConnectedWallet,
@@ -83,17 +80,17 @@ async function sendTx(
   try {
     if (chain.type === "terra") {
       let msg: MsgSend | MsgExecuteContract;
-      const uamount = scaleToStr(_amount);
+      const scaledAmount = scaleToStr(_amount, coin.decimals);
       const recipient = ApesAddresses.terra;
       if (coin.type === "terra-native" || coin.type === "ibc") {
         msg = new MsgSend(wallet.address, recipient, [
-          new Coin(coin.token_id, uamount),
+          new Coin(coin.token_id, scaledAmount),
         ]);
         /** cw20 */
       } else {
         msg = new MsgExecuteContract(wallet.address, coin.token_id, {
           transfer: {
-            amount: uamount,
+            amount: scaledAmount,
             recipient: recipient,
           },
         });
@@ -102,7 +99,7 @@ async function sendTx(
       return success ? { hash: result.txhash, recipient } : null;
       /** evm tx */
     } else {
-      const wei_amount = ethers.utils.parseEther(`${_amount}`);
+      const scaledAmount = ethers.utils.parseUnits(`${_amount}`, coin.decimals);
       const recipient = ApesAddresses.eth;
       const provider = new ethers.providers.Web3Provider(
         getProvider(wallet.id) as any
@@ -110,7 +107,7 @@ async function sendTx(
       const tx: TransactionRequest = {
         from: wallet.address,
         to: ApesAddresses.eth,
-        value: wei_amount,
+        value: scaledAmount,
       };
       const signer = provider.getSigner();
       let res: TransactionResponse;
