@@ -1,7 +1,7 @@
 import { IS_TEST } from "./env";
 
 export type Chain = {
-  type: "evm" | "terra";
+  type: "evm" | "terra" | "cosmos";
   name: string;
   rpc: string;
   lcd: string;
@@ -12,6 +12,13 @@ const infuraId = process.env.REACT_APP_INFURA_ID;
 
 export const chains: { [key: string]: Chain } = IS_TEST
   ? {
+      "uni-5": {
+        type: "cosmos",
+        name: "Juno Uni Testnet",
+        lcd: "https://api.uni.junonetwork.io",
+        rpc: "https://rpc.uni.junonetwork.io",
+        txExplorer: "https://testnet.ping.pub/juno/tx/",
+      },
       "pisco-1": {
         type: "terra",
         name: "Terra Pisco testnet",
@@ -35,9 +42,16 @@ export const chains: { [key: string]: Chain } = IS_TEST
       },
     }
   : {
+      "juno-1": {
+        type: "cosmos",
+        name: "Juno Mainnet",
+        lcd: "https://juno-api.polkachu.com",
+        rpc: "https://juno-rpc.polkachu.com",
+        txExplorer: "https://finder.terra.money/testnet/tx/",
+      },
       "phoenix-1": {
         type: "terra",
-        name: "Terra mainnet",
+        name: "Terra Mainnet",
         lcd: "https://phoenix-lcd.terra.dev",
         rpc: "",
         txExplorer: "https://finder.terra.money/mainnet/tx/",
