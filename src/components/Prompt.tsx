@@ -19,7 +19,7 @@ type Props = {
 };
 
 export default function Prompt({ message, tx, shareable }: Props) {
-  const { closeModal, showModal } = useModalContext();
+  const { closeModal, showModal, isDismissible } = useModalContext();
   return (
     <Dialog.Panel className="w-full max-w-xs grid place-items-center fixed-center z-20 bg-white dark:bg-blue-d7 fixed-center p-8 rounded-md border border-prim">
       <img src={angelIcon} alt="" className="w-32 h-32 object-contain" />
@@ -65,12 +65,14 @@ export default function Prompt({ message, tx, shareable }: Props) {
         </>
       )}
 
-      <button
-        onClick={closeModal}
-        className="mt-4 p-2 uppercase btn-blue text-xs font-extrabold rounded"
-      >
-        Go Back
-      </button>
+      {isDismissible && (
+        <button
+          onClick={closeModal}
+          className="mt-4 p-2 uppercase btn-blue text-xs font-extrabold rounded"
+        >
+          Go Back
+        </button>
+      )}
     </Dialog.Panel>
   );
 }

@@ -5,10 +5,11 @@ import Prompt from "components/Prompt";
 
 export default function useSubmit({ hash }: PrevTx) {
   const [submitRequest] = useReceiptMutation();
-  const { showModal } = useModalContext();
+  const { showModal, setModalOption } = useModalContext();
 
   const submit = async (data: FV) => {
     const { name, address, email, city, state, postalCode, country } = data;
+    setModalOption("isDismissible", false);
     const response = await submitRequest({
       fullName: `${name.first} ${name.last}`,
       email,
