@@ -1,5 +1,5 @@
 import { Popover } from "@headlessui/react";
-import { sliced } from "helpers/sliceAddress";
+import { maskAddress } from "helpers/maskAddress";
 import { Coin } from "types";
 import { ConnectedWallet as TConnectedWallet } from "contexts/WalletContext";
 import { chains } from "constants/chains";
@@ -23,9 +23,7 @@ const Wallet = () => {
               alt=""
               className="h-6 w-6 bg-white rounded-full p-1"
             />
-            <span className="max-sm:hidden">
-              {sliced(wallet.address, 5, -3)}
-            </span>
+            <span className="max-sm:hidden">{maskAddress(wallet.address)}</span>
             <DrawerIcon isOpen={open} size={22} />
           </>
         )}
@@ -36,7 +34,7 @@ const Wallet = () => {
           {chain.name}
         </p>
         <p className="sm:hidden mb-2 mt-1 text-sm text-right">
-          {sliced(wallet.address, 5, -4)}
+          {maskAddress(wallet.address)}
         </p>
         <p className="text-sm uppercase border-b border-prim mb-2 pb-1">
           Balances
