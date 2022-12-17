@@ -1,5 +1,4 @@
-import { Keplr } from "@keplr-wallet/types";
-
+import { Keplr } from "types";
 export interface Dwindow extends Window {
   xfi?: {
     ethereum?: { isMetaMask?: boolean };

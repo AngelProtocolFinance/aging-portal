@@ -1,6 +1,5 @@
-import { ChainInfo } from "@keplr-wallet/types";
 import { _chains, StaticRegistry } from "constants/chains";
-
+import { ChainInfo } from "types";
 const id: keyof StaticRegistry = "uni-5";
 const chain = _chains[id];
 

@@ -3,7 +3,12 @@ import { Wallet, WalletMeta, WalletState } from "./types";
 import { getProvider } from "helpers/getProvider";
 import { EIPMethods } from "constants/ethereum";
 import { retrieveUserAction, saveUserAction } from "./helpers/prefActions";
-import { AccountChangeHandler, ChainChangeHandler, Dwindow } from "types";
+import {
+  AccountChangeHandler,
+  ChainChangeHandler,
+  Dwindow,
+  Web3Provider,
+} from "types";
 import { toast } from "react-toastify";
 
 export default function useInjectedWallet(
@@ -96,11 +101,14 @@ export default function useInjectedWallet(
       provider.on("chainChanged", handleChainChange);
 
       setState({
+        type: "evm",
         status: "connected",
         address: accounts[0],
         chainId: `${parseInt(hexChainId, 16)}`,
         disconnect,
+        signer: new Web3Provider(provider).getSigner(),
       });
+
       saveUserAction(actionKey, "connect");
     } catch (err) {
       if (isNew) {

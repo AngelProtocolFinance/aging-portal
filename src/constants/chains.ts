@@ -1,7 +1,8 @@
+import { ConnectedToChainType } from "contexts/WalletContext";
 import { IS_TEST } from "./env";
 
 export type Chain = {
-  type: "evm" | "terra" | "cosmos"; //to determine which type tx to perform
+  type: ConnectedToChainType["type"]; //to determine which type tx to perform
   name: string;
   rpc: string;
   lcd: string;

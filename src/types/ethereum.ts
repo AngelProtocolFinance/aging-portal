@@ -1,5 +1,4 @@
 import { EIP1193Events } from "constants/ethereum";
-import { ethers } from "ethers";
 
 /*** EIP1193 spec https://eips.ethereum.org/EIPS/eip-1193*/
 //request

@@ -24,6 +24,7 @@ export const web3Api = createApi({
         async queryFn({ chainId, address, ...coin }) {
           const chain = chains[chainId];
           switch (coin.type) {
+            case "juno-native":
             case "terra-native":
             case "ibc": {
               const { balance } = await fetch(
