@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-// import { Connection, ProviderInfo } from "../types";
+import icon from "assets/icons/wallets/keplr.webp";
 import { Dwindow } from "types";
 import { IS_TEST } from "constants/env";
 import { GasPrice, SigningStargateClient } from "types";
@@ -71,5 +71,5 @@ export default function useKeplr(): Wallet {
     setState({ status: "disconnected", connect });
   }
 
-  return { ...state, logo: "", id: "keplr", name: "Keplr" };
+  return { ...state, logo: icon, id: "keplr", name: "Keplr" };
 }
