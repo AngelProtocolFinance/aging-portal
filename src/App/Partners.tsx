@@ -31,18 +31,16 @@ const Partners = ({ classes = "" }) => {
           of age-related disease.
         </p>
       </article>
-      <ExtLink
-        className="block mt-4 italic sm:text-lg"
-        href="https://www.lifespan.io/news/vitalik-buterin-the-best-thing-to-donate-money-to-is-the-fight-against-aging"
-      >
-        "The best thing to donate money to is the fight against aging" - Vitalik
-      </ExtLink>
       <div
         className={`font-heading container-padded grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-10 items-center p-8`}
-      > 
-        <CharityCard id={131} logo={charity1} name="Lifespan Extension Advocacy Foundation"/>
-        <CharityCard id={134} logo={charity2} name="SENS Research Foundation"/>
-        <CharityCard id={135} logo={charity3} name="Methuselah Foundation"/>
+      >
+        <CharityCard
+          id={131}
+          logo={charity1}
+          name="Lifespan Extension Advocacy Foundation"
+        />
+        <CharityCard id={134} logo={charity2} name="SENS Research Foundation" />
+        <CharityCard id={135} logo={charity3} name="Methuselah Foundation" />
       </div>
       <p className="leading-relaxed">
         Ever since the birth of blockchain technology, there has been an
@@ -53,19 +51,24 @@ const Partners = ({ classes = "" }) => {
         boundaries - be they financial or biological - in the service of all
         humankind.
       </p>
+      <ExtLink
+        className="block mt-4 italic sm:text-lg"
+        href="https://www.lifespan.io/news/vitalik-buterin-the-best-thing-to-donate-money-to-is-the-fight-against-aging"
+      >
+        "The best thing to donate money to is the fight against aging" - Vitalik
+      </ExtLink>
     </section>
   );
 };
 
-function CharityCard(props: { id: number, name: string; logo: string }) {
+function CharityCard(props: { id: number; name: string; logo: string }) {
   return (
     <div className="text-center grid gap-4 place-items-center p-8 rounded-md border bg-gray/20   dark:bg-blue-d6 border-prim">
-      <a href={`https://app.angelprotocol.io/profile/${props.id}`}
-          target="_blank">
-        <img 
-          src={props.logo}
-          style={{ height: "100px", }}
-        />
+      <a
+        href={`https://app.angelprotocol.io/profile/${props.id}`}
+        target="_blank"
+      >
+        <img src={props.logo} style={{ height: "100px" }} />
       </a>
     </div>
   );
