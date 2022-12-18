@@ -8,13 +8,13 @@ export default function DonateHeader({ classes = "" }) {
       </h2>
       <div className="leading-relaxed max-w-7xl">
         <p className="leading-relaxed my-4">
-          Every second, someone dies of an age-related disease. If your support
-          shortens the timetable for curing these diseases by just one second,
-          you could have saved someone's life.
+          Every second, someone dies of age-related diseases such as Parkinson's
+          or Alzheimer's. If your support helps shorten the timetable for curing
+          these diseases by just one second, you will have saved someone's life.
         </p>
         <p className="leading-relaxed my-4">
-          PLUS your donation is doubled courtesy of $10K in matching funds
-          donated by the{" "}
+          If you contribute now, your donation will be doubled thanks to $10K in
+          matches from the{" "}
           <ExtLink
             className="text-blue dark:text-blue-l2"
             href="https://angelprotocol.io/csr-partners"
@@ -25,9 +25,9 @@ export default function DonateHeader({ classes = "" }) {
         </p>
         <p className="leading-relaxed my-4">
           100% of your donation will go directly to our partner nonprofits
-          fighting the diseases of aging. Half will be used for immediate
-          impact, and half will be invested in perpetual endowments to provide
-          ongoing support, forever
+          fighting the diseases of aging. Half will be used for anti-aging work
+          that is currently underway. The rest will be invested in perpetual
+          endowments that will provide ongoing support for this work -- forever.
         </p>
       </div>
     </section>

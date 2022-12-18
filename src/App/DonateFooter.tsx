@@ -2,9 +2,9 @@ export default function DonateFooter({ classes = "" }) {
   return (
     <section className={`sm:container-unpadded container-padded ${classes}`}>
       <p className="leading-relaxed">
-        Donations can be tax efficient and receive immediate tax receipts. All
-        donor activity will be recorded onchain for future "proof of
-        philanthropy" NFT efforts developed in collaboration with the charity
+        Donations are not subject to capital gains taxes and result in immediate
+        tax receipts. Donor activity will be recorded onchain for future "proof
+        of philanthropy" NFT initiatives being developed with the nonprofit
         Lifespan.io.
       </p>
       <p className="leading-relaxed mt-4">

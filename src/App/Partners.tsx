@@ -1,4 +1,7 @@
 import ExtLink from "components/ExtLink";
+import charity1 from "assets/images/lifespan-logo.png";
+import charity2 from "assets/images/sens-logo.png";
+import charity3 from "assets/images/mf-logo.png";
 
 const Partners = ({ classes = "" }) => {
   return (
@@ -8,17 +11,17 @@ const Partners = ({ classes = "" }) => {
           Longevity Nonprofits Partners
         </h3>
         <p className="leading-relaxed">
-          In the last decade scientists have made significant breakthroughs in
-          understanding the root causes of age-related disease, and developing
-          credible approaches to begin addressing them.
+          Recent scientific breakthroughs have revealed much about what causes
+          age-related diseases -- and identified promising therapies to cure
+          them.
         </p>
         <p className="leading-relaxed my-4">
-          Right now, we are in the UN Decade of Healthy Aging and have an
-          opportunity to improve the quality and length of life for billions
-          worldwide. Age-related decline is inherently inequitable, with burdens
-          disproportionality born by women and minorities. Longevity is an
-          engineering challenge, and we invite you to help us solve one of the
-          biggest problems of our age.
+          This decade -- the UN Decade of Healthy Ageing -- offers the
+          opportunity to improve the quality and length of life for billions of
+          people worldwide, particularly women and minorities who are
+          disproportionately burdened by age-related conditions. Science has
+          shown that longevity is an engineering challenge. Join us in solving
+          what may be the leading problem of our age.
         </p>
         <p className="leading-relaxed">
           Together, we can slay the{" "}
@@ -34,8 +37,38 @@ const Partners = ({ classes = "" }) => {
       >
         "The best thing to donate money to is the fight against aging" - Vitalik
       </ExtLink>
+      <div
+        className={`font-heading container-padded grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-10 items-center p-8`}
+      > 
+        <CharityCard id={131} logo={charity1} name="Lifespan Extension Advocacy Foundation"/>
+        <CharityCard id={134} logo={charity2} name="SENS Research Foundation"/>
+        <CharityCard id={135} logo={charity3} name="Methuselah Foundation"/>
+      </div>
+      <p className="leading-relaxed">
+        Ever since the birth of blockchain technology, there has been an
+        indelible connection between it and the desire for life extension — all
+        the way back to the early cypherpunks and cryptocurrency founders such
+        as Hal Finney, forward to the pioneers of the present such as Vitalik
+        Buterin. You can be part of this grand tradition of transcending
+        boundaries - be they financial or biological - in the service of all
+        humankind.
+      </p>
     </section>
   );
 };
+
+function CharityCard(props: { id: number, name: string; logo: string }) {
+  return (
+    <div className="text-center grid gap-4 place-items-center p-8 rounded-md border bg-gray/20   dark:bg-blue-d6 border-prim">
+      <a href={`https://app.angelprotocol.io/profile/${props.id}`}
+          target="_blank">
+        <img 
+          src={props.logo}
+          style={{ height: "100px", }}
+        />
+      </a>
+    </div>
+  );
+}
 
 export default Partners;
