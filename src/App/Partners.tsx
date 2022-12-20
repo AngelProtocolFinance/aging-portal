@@ -67,7 +67,7 @@ const Partners = ({ classes = "" }) => {
 
 function CharityCard(props: { id: number; name: string; logo: string }) {
   return (
-    <div className="text-center grid gap-4 place-items-center p-8 rounded-md border bg-orange/60 dark:bg-blue-d6 border-prim">
+    <div className="text-center grid gap-4 place-items-center p-8 rounded-md border bg-blue-d6 dark:bg-blue-d6 border-prim">
       <a
         href={`https://app.angelprotocol.io/profile/${props.id}`}
         target="_blank"
