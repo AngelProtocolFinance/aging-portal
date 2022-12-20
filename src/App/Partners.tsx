@@ -16,7 +16,11 @@ const Partners = ({ classes = "" }) => {
           them.
         </p>
         <p className="leading-relaxed my-4">
-          This decade -- the UN Decade of Healthy Ageing -- offers the
+          This decade -- the{" "}
+          <ExtLink href="https://www.who.int/initiatives/decade-of-healthy-ageing#:~:text=The%20United%20Nations%20Decade%20of,improve%20the%20lives%20of%20older">
+          UN Decade of Healthy Aging
+          </ExtLink>{" "}
+           -- offers the
           opportunity to improve the quality and length of life for billions of
           people worldwide, particularly women and minorities who are
           disproportionately burdened by age-related conditions. Science has
@@ -63,7 +67,7 @@ const Partners = ({ classes = "" }) => {
 
 function CharityCard(props: { id: number; name: string; logo: string }) {
   return (
-    <div className="text-center grid gap-4 place-items-center p-8 rounded-md border bg-gray/20   dark:bg-blue-d6 border-prim">
+    <div className="text-center grid gap-4 place-items-center p-8 rounded-md border bg-orange/60 dark:bg-blue-d6 border-prim">
       <a
         href={`https://app.angelprotocol.io/profile/${props.id}`}
         target="_blank"
