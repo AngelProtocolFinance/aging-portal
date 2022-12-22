@@ -12,11 +12,11 @@ const Metrics = ({ classes = "" }) => {
     >
       <Metric
         name="Total Donated"
-        value={humanize(+data.totalUsd, 3) + " USDC"}
+        value={humanize(+data.totalUsd, 2) + " USDC"}
       />
       <Metric
         name="Largest Donation"
-        value={humanize(+data.largestDonationUsd, 3) + " USDC"}
+        value={humanize(+data.largestDonationUsd, 2) + " USDC"}
       />
       <Metric name="Number of Donations" value={data.numberOfDonations} />
     </section>
