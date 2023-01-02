@@ -40,7 +40,7 @@ export default function useDonate() {
 
     const result = await sendTx(coin, amount, wallet);
     if (result) {
-      const { hash, recipient } = result;
+      const { hash } = result;
 
       showModal(
         Prompt,
@@ -51,7 +51,7 @@ export default function useDonate() {
       const res = await saveDonation({
         transactionId: hash,
         chainId: wallet.chainId,
-        walletAddress: recipient,
+        walletAddress: wallet.address,
         denomination: coin.symbol,
         amount: +amount,
       });
@@ -82,7 +82,7 @@ async function sendTx(
   coin: FV["coin"],
   _amount: string,
   wallet: ConnectedWallet
-): Promise<{ hash: string; recipient: string } | null> {
+): Promise<{ hash: string } | null> {
   try {
     if (wallet.type === "terra") {
       let msg: MsgSend | MsgExecuteContract;
@@ -102,7 +102,7 @@ async function sendTx(
         });
       }
       const { success, result } = await wallet.post({ msgs: [msg] });
-      return success ? { hash: result.txhash, recipient } : null;
+      return success ? { hash: result.txhash } : null;
     } else if (wallet.type === "cosmos") {
       const encoder = new TextEncoder();
       const scaledAmount = scaleToStr(_amount, coin.decimals);
@@ -141,7 +141,7 @@ async function sendTx(
 
       const response = await wallet.post(wallet.address, [msg], "auto");
       return !response.code
-        ? { hash: response.transactionHash, recipient }
+        ? { hash: response.transactionHash }
         : null;
       /** evm tx */
     } else {
@@ -150,7 +150,7 @@ async function sendTx(
 
       const tx: TransactionRequest = {
         from: wallet.address,
-        to: ap_wallets.eth,
+        to: recipient,
         value: scaledAmount,
       };
       let res: TransactionResponse;
@@ -164,7 +164,7 @@ async function sendTx(
         );
         res = await ER20Contract.transfer(tx.to, tx.value);
       }
-      return { hash: res.hash, recipient };
+      return { hash: res.hash };
     }
   } catch (err) {
     console.log(err);
