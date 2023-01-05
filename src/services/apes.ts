@@ -14,7 +14,7 @@ type DonationMetrics = {
 type TxDefaults = {
   /** defaults */
   transactionDate: string;
-  splitLiq: "50"; //default to "100%"
+  splitLiq: "50"; //default to "50%"
   fundId: number;
   network: "testnet" | "mainnet";
 };
