@@ -14,7 +14,7 @@ type DonationMetrics = {
 type TxDefaults = {
   /** defaults */
   transactionDate: string;
-  splitLiq: "100"; //default to "100%"
+  splitLiq: "50"; //default to "50%"
   fundId: number;
   network: "testnet" | "mainnet";
 };
@@ -56,7 +56,7 @@ export const apes = createApi({
       query: (payload) => {
         const defaults: TxDefaults = {
           network: IS_TEST ? "testnet" : "mainnet",
-          splitLiq: "100",
+          splitLiq: "50",
           transactionDate: new Date().toISOString(),
           fundId: app.indexFund,
         };
