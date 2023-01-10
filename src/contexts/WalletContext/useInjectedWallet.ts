@@ -10,6 +10,7 @@ import {
   Web3Provider,
 } from "types";
 import { toast } from "react-toastify";
+import { isXdefiPrioritized } from "./helpers/assertions";
 
 export default function useInjectedWallet(
   meta: WalletMeta & { installUrl: string }
@@ -76,11 +77,11 @@ export default function useInjectedWallet(
       /** isMobile check not needed, just hide this wallet on mobile */
 
       /** xdefi checks */
-      const xfiEth = (window as Dwindow).xfi?.ethereum;
-      if (id === "xdefi-evm" && !xfiEth?.isMetaMask) {
+
+      if (id === "xdefi-evm" && !isXdefiPrioritized()) {
         if (!isNew) return;
         return toast.warn("Kindly prioritize Xdefi and reload the page");
-      } else if (id !== "xdefi-evm" && xfiEth?.isMetaMask) {
+      } else if (id !== "xdefi-evm" && isXdefiPrioritized()) {
         if (!isNew) return;
         return toast.warn(
           "Kindly remove priority to Xdefi and reload the page"

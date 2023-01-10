@@ -91,6 +91,7 @@ export const chains: ChainRegistry = IS_TEST ? testnets : mainnets;
 export const _chains = { ...testnets, ...mainnets };
 
 export type StaticRegistry = typeof _chains;
+export type ChainIDs = keyof StaticRegistry;
 function toChainIDRegistry<T extends keyof StaticRegistry>(
   registry: StaticRegistry
 ): { [key in StaticRegistry[T]["brand"]]: string } {

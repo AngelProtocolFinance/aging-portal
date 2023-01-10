@@ -1,12 +1,12 @@
 import { useWallet } from "@terra-money/wallet-provider";
 import { toast } from "react-toastify";
 import {
-  Dwindow,
   TerraInstallation,
   TerraConnection,
   ConnectType,
   WalletStatus,
 } from "types";
+import { isXdefiPrioritized } from "./helpers/assertions";
 import { ProviderId, Wallet } from "./types";
 
 const XDEFI_ID = "xdefi-wallet";
@@ -47,8 +47,8 @@ export default function useTerra2(): Wallet[] {
                 window.open(c.url, "_blank", "noopener noreferrer");
               } else {
                 /** don't connect terra if xdefi is prioritized*/
-                const xfiEth = (window as Dwindow).xfi?.ethereum;
-                if (c.identifier !== XDEFI_ID && xfiEth?.isMetaMask) {
+
+                if (c.identifier !== XDEFI_ID && isXdefiPrioritized()) {
                   return toast.warning(
                     "Kindly remove priority to Xdefi and reload the page"
                   );

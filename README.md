@@ -20,6 +20,7 @@ frontend:
         - REACT_APP_INFURA_ID=${REACT_APP_INFURA_ID}
         - REACT_APP_NETWORK=${REACT_APP_NETWORK}
         - REACT_APP_APES_AUTH_SECRET_KEY=${REACT_APP_APES_AUTH_SECRET_KEY}
+        - REACT_APP_KADO_API_KEY=${REACT_APP_KADO_API_KEY}
         - yarn build
   artifacts:
     baseDirectory: build
@@ -32,9 +33,11 @@ frontend:
 4. Configure the following environment variables with these varialbe and their values (ask a team member!):
 
 ```
-REACT_APP_JWT_SECRET_KEY = ??
-REACT_APP_APES_AUTH_SECRET_KEY = ??
+REACT_APP_INFURA_ID=??
+REACT_APP_APES_AUTH_SECRET_KEY=??
 REACT_APP_NETWORK=TESTNET or MAINNET
+REACT_APP_KADO_API_KEY=??
+
 ```
 
 ## DEVELOPMENT NOTES
