@@ -9,6 +9,8 @@ import withConnectedWallet, { useConnectedWallet } from "contexts/WalletGuard";
 import { Opener } from "./wallet-selection/Opener";
 import { useTokensQuery } from "services/apes";
 import { useBalanceQuery } from "services/web3";
+import { useModalContext } from "contexts/ModalContext";
+import KadoModal from "components/KadoModal";
 
 const Wallet = () => {
   const wallet = useConnectedWallet();
@@ -53,14 +55,24 @@ const Wallet = () => {
 };
 
 function Balances(wallet: TConnectedWallet) {
+  const { showModal } = useModalContext();
   const { data: coins = [], isLoading } = useTokensQuery(wallet.chainId);
-  if (isLoading) return <p className="text-sm mb-4">Fetching tokens...</p>;
+  if (isLoading) return <p className="text-sm">Fetching tokens...</p>;
   return (
-    <div className="grid gap-1 mb-4 empty:after:content-['wallet_is_empty'] after:text-xs">
-      {coins.map((coin) => (
-        <Token key={coin.token_id} wallet={wallet} coin={coin} />
-      ))}
-    </div>
+    <>
+      <div className="grid gap-1 peer empty:after:content-['wallet_is_empty'] after:text-xs">
+        {coins.map((coin) => (
+          <Token key={coin.token_id} wallet={wallet} coin={coin} />
+        ))}
+      </div>
+      <button
+        type="button"
+        onClick={() => showModal(KadoModal, {})}
+        className="hidden peer-empty:block text-xs text-orange uppercase text-heading mb-4 hover:text-orange-l2"
+      >
+        buy crypto
+      </button>
+    </>
   );
 }
 
