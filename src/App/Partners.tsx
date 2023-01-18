@@ -72,7 +72,7 @@ function CharityCard(props: { id: number; name: string; logo: string }) {
         href={`https://app.angelprotocol.io/profile/${props.id}`}
         target="_blank"
       >
-        <img src={props.logo} style={{ height: "100px" }} />
+        <img src={props.logo} style={{ maxHeight: "80px" }} />
       </a>
     </div>
   );
