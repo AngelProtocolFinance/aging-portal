@@ -18,14 +18,13 @@ const Partners = ({ classes = "" }) => {
         <p className="leading-relaxed my-4">
           This decade -- the{" "}
           <ExtLink href="https://www.who.int/initiatives/decade-of-healthy-ageing#:~:text=The%20United%20Nations%20Decade%20of,improve%20the%20lives%20of%20older">
-          UN Decade of Healthy Aging
+            UN Decade of Healthy Aging
           </ExtLink>{" "}
-           -- offers the
-          opportunity to improve the quality and length of life for billions of
-          people worldwide, particularly women and minorities who are
-          disproportionately burdened by age-related conditions. Science has
-          shown that longevity is an engineering challenge. Join us in solving
-          what may be the leading problem of our age.
+          -- offers the opportunity to improve the quality and length of life
+          for billions of people worldwide, particularly women and minorities
+          who are disproportionately burdened by age-related conditions. Science
+          has shown that longevity is an engineering challenge. Join us in
+          solving what may be the leading problem of our age.
         </p>
         <p className="leading-relaxed">
           Together, we can slay the{" "}

@@ -140,9 +140,7 @@ async function sendTx(
             };
 
       const response = await wallet.post(wallet.address, [msg], "auto");
-      return !response.code
-        ? { hash: response.transactionHash }
-        : null;
+      return !response.code ? { hash: response.transactionHash } : null;
       /** evm tx */
     } else {
       const scaledAmount = ethers.utils.parseUnits(`${_amount}`, coin.decimals);
