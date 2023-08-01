@@ -13,17 +13,6 @@ export default function DonateHeader({ classes = "" }) {
           these diseases by just one second, you will have saved someone's life.
         </p>
         <p className="leading-relaxed my-4">
-          If you contribute now, your donation will be doubled thanks to $10K in
-          matches from the{" "}
-          <ExtLink
-            className="text-blue dark:text-blue-l2"
-            href="https://angelprotocol.io/csr-partners"
-          >
-            Angel Alliance
-          </ExtLink>
-          .
-        </p>
-        <p className="leading-relaxed my-4">
           100% of your donation will go directly to our partner nonprofits
           fighting the diseases of aging. Half will be used for anti-aging work
           that is currently underway. The rest will be invested in perpetual

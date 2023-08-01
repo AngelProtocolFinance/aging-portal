@@ -52,7 +52,7 @@ const Footer = () => {
           LITEPAPER
         </a>
         <p className="text-xs text-white dark:text-gray">
-          COPYRIGHT 2022 ANGEL PROTOCOL. ALL RIGHTS RESERVED.
+          COPYRIGHT 2023 ANGEL GIVING. ALL RIGHTS RESERVED.
         </p>
       </div>
     </footer>

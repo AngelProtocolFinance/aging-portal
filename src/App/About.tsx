@@ -8,14 +8,14 @@ const About = ({ classes = "" }) => {
           Who We Are
         </h3>
         <p className="leading-relaxed">
-          Angel Protocol enables charities to benefit from Web3 technology,
+          Angel Giving enables charities to benefit from Web3 technology,
           community, and philanthropy. 100% of donations go to charity,
           transparently onchain, to their own non-custodial multisig wallets.
           Donations help build an endowment invested in a balanced portfolio of
           DeFi yield that keeps growing and giving, forever.
         </p>
         <p className="leading-relaxed my-4">
-          Angel Protocol charges no set-up or donation processing fees, so
+          Angel Giving charges no set-up or donation processing fees, so
           charities have a free way to accept cryptocurrency donations and
           experience the benefits & generosity Web3 can provide.
         </p>
